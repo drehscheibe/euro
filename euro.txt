@@ -12,15 +12,15 @@ are already built-in. Further rates can be added easily.
 
 author          = "Melchior FRANZ"
 version         = "1.1"
-date            = "19 February 2003"
+date            = "7 March 2005"
 filename        = "euro.dtx"
 address         = "Melchior FRANZ
                    Rieder Hauptstrasse 52
                    A-5212 SCHNEEGATTERN
                    AUSTRIA"
 telephone       = "++43 7746 3109"
-URL             = "http://www.unet.univie.ac.at/~a8603365/"
-email           = "a8603365@unet.univie.ac.at"
+URL             = "http://members.aon.at/mfranz/TeX/"
+email           = "mfranz # aon : at"
 codetable       = "ISO/ASCII"
 keywords        = "euro"
 supported       = "yes"

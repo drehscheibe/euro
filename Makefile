@@ -2,7 +2,7 @@
 
 NAME=euro
 ARCHIVE_NAME=$(NAME).tar.gz
-ARCHIVE_CONTENTS=$(NAME).dtx Makefile $(NAME).txt $(NAME).ins
+ARCHIVE_CONTENTS=$(NAME).dtx Makefile $(NAME).txt $(NAME).ins $(NAME).pdf
 MAKEIDXOPT=
 DVIPSOPT= #-Pcmz -Pamz
 DEP=$(NAME).sty
@@ -30,7 +30,7 @@ pdf: $(NAME).pdf
 
 arc: archive
 
-archive: $(NAME).ins
+archive: $(NAME).ins $(NAME).pdf
 	@ tar -czf $(ARCHIVE_NAME) $(ARCHIVE_CONTENTS)
 	@ echo $(ARCHIVE_NAME):
 	@ echo ====================
