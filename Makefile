@@ -14,15 +14,15 @@ print: $(NAME).ps
 	@ read key
 	psbook $(NAME).ps|psnup -2|psselect -o -r|lpr
 
-%.ps: %.dvi 
+%.ps: %.dvi
 	dvips $(DVIPSOPT) $< -o $@
 
 archive:
-	@ tar -czf $(ARCHNAME) $(ARCHIVE) 
+	@ tar -czf $(ARCHNAME) $(ARCHIVE)
 	@ echo ""
-	@ echo $(ARCHNAME)		
+	@ echo $(ARCHNAME)
 
-clean: 
+clean:
 	rm -f $(NAME).{log,toc,lot,lof,idx,ilg,ind,aux,blg,bbl,dvi,ins}
 
 distclean: clean
