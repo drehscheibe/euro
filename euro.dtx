@@ -98,7 +98,7 @@
 % \fi
 %
 %
-% \CheckSum{451}
+% \CheckSum{452}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -356,7 +356,7 @@
 % \item[\textbf{\opt{eco}}]
 %   The \opt{eco} option typesets monetary amounts as, I think,
 %   economists prefer it, with \textsc{ISO} codes preceding the values.
-% \item[\textbf{\opt{dot}}]
+% \item[\textbf{\opt{dots}}]
 %   The \opt{dots} option inserts dots as three-digits group
 %   separators. (Default is a little space like \rule{.4pt}{.75em}\,\rule{.4pt}{.75em}.)
 % \item[\textbf{\opt{table}}]
@@ -399,12 +399,12 @@
 %   \EUROFORMAT{in}{\iso~\val}^^A
 %   \EUROFORMAT{out}{\iso~\val}^^A
 %   \EURO{ATS}{1000}\\
-% \opt{eco}\(+\)\opt{endash}&\let\EURO@table\EURO@endash
+% \opt{eco,endash}&\let\EURO@table\EURO@endash
 %   \EUROFORMAT{main}{\table\in\ (\out)}^^A
 %   \EUROFORMAT{in}{\iso~\val}^^A
 %   \EUROFORMAT{out}{\iso~\val}^^A
 %   \EURO{ATS}{1000}\\
-% \opt{eco}\(+\)\opt{emdash}&\let\EURO@table\EURO@emdash
+% \opt{eco,emdash}&\let\EURO@table\EURO@emdash
 %   \EUROFORMAT{main}{\table\in\ (\out)}^^A
 %   \EUROFORMAT{in}{\iso~\val}^^A
 %   \EUROFORMAT{out}{\iso~\val}^^A
@@ -633,7 +633,7 @@
 %
 % \begin{description}
 % \item[group separators:]
-%   separate groups of three decimal digits to improve readability of greater numbers.
+%   separate groups of three decimal digits to improve legibility of bigger numbers.
 %   It's a small space by default, but taking a space, a dot or just nothing might be
 %   desirable in some cases.
 % \item[decimal point:]
@@ -1081,7 +1081,7 @@
   \EURO@\egroup}
 \newcommand*\EURO@scan[5]{%
   \def\val{\FPifzero#5\EURO@zero\else\EURO@num#5\fi}%
-  \def\iso{#2}\def\sym{#3}\def\EURO@form{#4}%
+  \def\iso{#2}\def\sym{#3}\def\EURO@form{\EURO@dflt#4}%
   \ifx\EURO@form\empty\let\EURO@form\EURO@dflt\fi
   \EURO@form}%
 \newcommand*\EURO@setzero[3]{\def\EURO@zero{#1}%
