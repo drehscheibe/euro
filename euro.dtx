@@ -1,5 +1,5 @@
 % \iffalse
-%% File: euro.dtx       Copyright (C) 1999     Melchior FRANZ
+%% File: euro.dtx       Copyright (C) 1999,2001     Melchior FRANZ
 %
 %<*preamble>
 %
@@ -24,11 +24,12 @@
 %% ====================================================================
 %%  @LaTeX-package-file{
 %%     author          = "Melchior FRANZ",
-%%     version         = "0.2",
-%%     date            = "15 May 1999",
+%%     version         = "1.0",
+%%     date            = "12 October 2001",
 %%     filename        = "euro.dtx",
 %%     address         = "Melchior FRANZ
-%%                        A-5212 SCHNEEGATTERN 34
+%%                        Rieder Hauptstrasse 52
+%%                        A-5212 SCHNEEGATTERN
 %%                        AUSTRIA",
 %%     telephone       = "++43 7746 3109",
 %%     URL             = "http://unet.univie.ac.at/~a8603365/",
@@ -59,6 +60,7 @@
 \begin{filecontents}{euro.ins}
 \def\batchfile{euro.ins}
 \input docstrip.tex
+\askforoverwritefalse
 \keepsilent
 \generate{\file{euro.sty}{\from{euro.dtx}{package}}}
 \endbatchfile
@@ -67,8 +69,8 @@
 %
 %
 %<*driver>
-\def\fileversion{0.2}
-\def\filedate{1999/05/15}
+\def\fileversion{1.0}
+\def\filedate{2001/10/12}
 \documentclass[draft]{ltxdoc}
 %
 \IfFileExists{euro.sty}
@@ -95,7 +97,7 @@
 % \fi
 %
 %
-% \CheckSum{448}
+% \CheckSum{451}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -167,13 +169,14 @@
 %
 % \changes{v0.1}{1999/02/01}{initial version}%
 % \changes{v0.2}{1999/05/15}{interface completely new; integer rounding implemented}%
+% \changes{v1.0}{2001/10/12}{greek currency added}%
 %
 %
 %
 %
 % \title{The \texttt{euro} package}
 % \author{Melchior \textsc{FRANZ}}
-% \date{May 15, 1999}
+% \date{October 12, 2001}
 % \maketitle
 %
 %
@@ -211,7 +214,7 @@
 %
 % \section{Introduction} 
 %
-% Eleven European countries are currently joining the so-called \emph{Euro-zone.}
+% Twelve European countries are currently joining the so-called \emph{Euro-zone.}
 % Until the end of 2001 their national currency units will only
 % exist as a subunit of the common \emph{Euro} currency
 % with conversion rates already irrevocably fixed.
@@ -258,15 +261,16 @@
 % \begin{quote}
 % \begin{center}
 % \begin{tabular}{ll@{\hspace{2cm}}ll}
-% \texttt{EUR}& Europe&    \texttt{FRF}& France\\
+% \texttt{EUR}& Europe&    \texttt{GRD}& Greece\\
 % \texttt{ATS}& Austria&   \texttt{IEP}& Ireland\\
 % \texttt{BEF}& Belgium&   \texttt{ITL}& Italy\\
 % \texttt{DEM}& Germany&   \texttt{LUF}& Luxembourg\\
 % \texttt{ESP}& Spain&     \texttt{NLG}& The Netherlands\\
-% \texttt{FIM}& Finnland&  \texttt{PTE}& Portugal
+% \texttt{FIM}& Finnland&  \texttt{PTE}& Portugal\\
+% \texttt{FRF}& France
 % \end{tabular}
 %
-% \caption{ISO currency codes of the \emph{Euro} and of the eleven \emph{Euro-zone} countries.}
+% \caption{ISO currency codes of the \emph{Euro} and of the twelve \emph{Euro-zone} countries.}
 % \label{tab:iso}
 % \end{center}
 % \end{quote}
@@ -444,7 +448,7 @@
 % \end{example}
 %
 % The pound symbol in this example looks a bit too slanted. You'd better take
-% |\textsterling| from the |textcomp| packagei, which I didn't!
+% |\textsterling| from the |textcomp| package, which I didn't!
 %
 %
 %
@@ -573,7 +577,7 @@
 % to struggle around with these cryptographic things.
 %
 % To make further explanations easier, figure~\ref{fig:nomencl} describes the elements
-% that a number may consist of (using my own nomenclature---my English isn't good enough).
+% that a number may consist of (using my own nomenclature).
 % 
 % \begin{center}
 % \begin{figure}
@@ -604,8 +608,7 @@
 %     \put(48,10){\line(-1,0){43}}
 %     \put(5,10){\line(0,1){13}}
 % \end{picture}}
-% \caption{Elements that a number may consist of, or: The attempt to
-%   introduce a nomenclature, no matter if it's good English.}
+% \caption{Elements that a number may consist of.}
 % \label{fig:nomencl}
 % \end{figure}
 % \end{center}
@@ -751,7 +754,7 @@
 %
 % While |\plus| isn't used by default, |\minus| is defined to provide a preceding
 % minus sign for negative numbers. (The negative numbers of the last two lines
-% are \emph{really} red, believe me\dots)
+% are \emph{really} red, believe me!)
 %
 %   {\EUROFORMAT{main}{\align\in\hspace*{10mm}}
 %   \EUROFORMAT{in}{\val}
@@ -955,7 +958,13 @@
 % \bibitem{Duden}{Duden, Volume 1: \textit{Die Rechtschreibung.} Bibliographisches Institut,
 %   Mann\-heim--Wien--Z\"urich, 1986, 19th~edition.}
 %
-% \bibitem{EUrates}{European Commission: \textit{Official Journal L~359.} 31~December~1998.}
+% \bibitem{EUrates}{European Council: \textit{Council Regulation (EC) No.~2866/98 of 31~December~1998
+%   on the conversion rates between the euro and the currencies of the Member States adopting
+%   the euro.} Official Journal L~359. 31~December~1998.}
+%
+% \bibitem{EUratesGRD}{European Council: \textit{Council Regulation (EC) No.~1478/2000 of 19~June 2000
+%   amending Regulation (EC) No.~2866/98 on the conversion rates between the euro and the currencies
+%   of the Member States adopting the euro.} Official Journal L~167. 7~July~2000.}
 %
 % \bibitem{EUround}{European Council: \textit{Certain provisions related to the introduction of the 
 %   Euro.} Council Regulation 1103/97, 17~June~1997.}
@@ -981,7 +990,7 @@
 %    \begin{macrocode}
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{euro}[1999/05/15 v0.2 euro  (mf)]
+\ProvidesPackage{euro}[2001/10/12 v1.0 euro  (mf)]
 \RequirePackage{fp-basic}
 \RequirePackage{fp-snap}
 \FPmessagesfalse
@@ -1225,6 +1234,7 @@
 % \begin{macro}{\EURO@@ESP}
 % \begin{macro}{\EURO@@FIM}
 % \begin{macro}{\EURO@@FRF}
+% \begin{macro}{\EURO@@GRD}
 % \begin{macro}{\EURO@@IEP}
 % \begin{macro}{\EURO@@ITL}
 % \begin{macro}{\EURO@@LUF}
@@ -1232,9 +1242,10 @@
 % \begin{macro}{\EURO@@PTE}
 % \begin{macro}{\EURO@@EUR}
 % These values have been irrevocably fixed by the European Council on suggestion
-% by the European Commission and been published in the
-% \emph{Official Journal L~359 31.\,12.\,1998}
+% by the European Commission and been published in the \emph{Council Regulation (EC) No.~2866/98}
+% \cite{EUrates} and \emph{No.~1478/2000} \cite{EUratesGRD}
 % (taken from |http://europa.eu.int/|).
+% \changes{v1.0}{2001/10/12}{greek currency added}%
 %
 %    \begin{macrocode}
 \newcommand*\EURO@@ATS{\EURO@set{13.7603}{ATS}{\"oS}{}}
@@ -1243,6 +1254,7 @@
 \newcommand*\EURO@@ESP{\EURO@set{166.386}{ESP}{Pt.}{}}
 \newcommand*\EURO@@FIM{\EURO@set{5.94573}{FIM}{FIM}{}}
 \newcommand*\EURO@@FRF{\EURO@set{6.55957}{FRF}{FRF}{}}
+\newcommand*\EURO@@GRD{\EURO@set{340.750}{GRD}{GRD}{}}
 \newcommand*\EURO@@IEP{\EURO@set{.787564}{IEP}{IEP}{}}
 \newcommand*\EURO@@ITL{\EURO@set{1936.27}{ITL}{Lit.}{}}
 \newcommand*\EURO@@LUF{\EURO@set{40.3399}{LUF}{LUF}{}}
@@ -1250,6 +1262,7 @@
 \newcommand*\EURO@@PTE{\EURO@set{200.482}{PTE}{PTE}{}}
 \newcommand*\EURO@@EUR{\EURO@set{1.00000}{EUR}{Euro}{}}
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
