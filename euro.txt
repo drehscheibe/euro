@@ -9,11 +9,12 @@ Conversion rates for the so-called Euro-zone countries
 are already built-in. Further rates can be added easily.
 
 author          = "Melchior FRANZ"
-version         = "0.2"
-date            = "15 May 1999"
+version         = "1.0"
+date            = "12 October 2001"
 filename        = "euro.dtx"
 address         = "Melchior FRANZ
-                   A-5212 SCHNEEGATTERN 34
+                   Rieder Hauptstrasse 52
+                   A-5212 SCHNEEGATTERN
                    AUSTRIA"
 telephone       = "++43 7746 3109"
 URL             = "http://unet.univie.ac.at/~a8603365"
