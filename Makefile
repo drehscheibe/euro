@@ -41,9 +41,11 @@ LATEXMAX = 5
 		RUNS=`expr $$RUNS - 1`; \
 	done
 
-$(NAME).sty: $(NAME).ins
+$(NAME).sty: $(NAME).ins FORCE
 	tex $(NAME).ins
 
 $(NAME).ins:
 	latex $(NAME).dtx
+
+FORCE:
 

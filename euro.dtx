@@ -1,6 +1,7 @@
 % \iffalse
 %% File: euro.dtx       Copyright (C) 1999,2001     Melchior FRANZ
 %% $Id$
+%% $Version: 1.0 $
 %
 %<*preamble>
 %
@@ -189,14 +190,14 @@
 %      \footnote{This package has version number \fileversion, last revised \filedate.},
 % which converts arbitrary currency units into each other using the \emph{Euro}
 % (official symbol \euro
-%      \footnote{The \euro\ symbol of this documentation is
+%      \footnote{The \euro\ symbol in this documentation is
 %      `handmade'---it is really ugly and not to be used in real documents. Take the well designed symbol
 %      defined e.\,g.~in the |eurosym| package by \textsc{Henrik Theiling} eventually using 
 %      the |eurofont| package by \textsc{Rowland McDonnell} to select the proper fo(u)nt/shape.}^^A
 % ) as base unit, and formats monetary amounts in almost any desired way.
 % The respective conversion rates are predefined for the national
 % currency units of the \emph{Euro-zone} countries, every other
-% currency unit can be added easily.
+% currency unit can easily be added.
 % The package allows to type e.\,g.\ |\ATS{17.6}| to get something
 % like \ATS{17.6}. All necessary calculations are with high precision done
 % by the great |fp| package^^A
@@ -215,13 +216,17 @@
 %
 % \section{Introduction} 
 %
-% Twelve European countries are currently joining the so-called \emph{Euro-zone.}
-% Until the end of 2001 their national currency units will only
-% exist as a subunit of the common \emph{Euro} currency
-% with conversion rates already irrevocably fixed.
-% Finally, on the 1st of january 2002 the \emph{Euro} will take over.
+% Twelve of the fifteen members of the European Union have agreed
+% to replace their national currencies by a common currency, the
+% \emph{Euro}. Before the 1\textsuperscript{st} of january 2001 the Euro was only a
+% unit for calculations, with fixed conversion rates for
+% each of the old currencies. Since then the Euro is actual money with
+% coins and bank notes. The Francs, the D-Mark, the Schilling,
+% they are history.
+% Several further countries will join the European Union over
+% the next years, and sooner or later also the so-called \emph{Euro-zone}.
 %
-% It's meanwhile common practice in Europe to write monetary amounts both in the national
+% It's still common practice in Europe to write monetary amounts both in the national
 % currency and in the new \euro\ currency,
 % thus helping to become familiar with the \emph{Euro}.
 %
@@ -233,9 +238,9 @@
 % \(-999999999999999999{,}999999999999999999\) to
 % \(+999999999999999999{,}999999999999999999\) with high precision.
 %
-% Since there are so many currencies and possible formats to choose from, 
+% Since there are so many currencies and different possible formats, 
 % this package provides only a customizable interface. All parameters are
-% predefined in a common way though, so that no further definitions will be
+% predefined in a common way, though, so that no further definitions will be
 % necessary in most cases. The package tries to load an optional file
 % `|euro.cfg|' where such local customizing commands may be placed in
 % (see section~\ref{sec:config} for further explanation).
@@ -360,10 +365,10 @@
 %   The \opt{dots} option inserts dots as three-digits group
 %   separators. (Default is a little space like \rule{.4pt}{.75em}\,\rule{.4pt}{.75em}.)
 % \item[\textbf{\opt{table}}]
-%   Turns the \emph{table mode} on globally.
+%   Turns the \emph{table mode} globally on.
 %   While integers are normally printed without decimal point and fractional part (sic!),
 %   it may especially in tables be desirable to typeset a decimal point followed by a dash.
-%   See section \ref{sec:align} for how to keep this behaviour local to a particular table.
+%   See section \ref{sec:align} for how to keep this behavior local to a particular table.
 % \item[\textbf{\opt{emdash}}]
 %   Lets the \opt{table} dashes be `---'. Doesn't turn on \emph{table mode}.
 %   (This option is selected by default, so it doesn't make much sense at
@@ -382,7 +387,7 @@
 % \begin{tabular}{lr}%
 % |\EURO{ATS}{1000}| with&\\[.5ex]
 % \hline\\[-1.5ex]
-% default settings&
+% (default settings)&
 %   \EURO{ATS}{1000}\\
 % \opt{dots}&\let\EURO@lsep.\let\EURO@rsep.^^A
 %   \EURO{ATS}{1000}\\
@@ -449,7 +454,7 @@
 % \end{example}
 %
 % The pound symbol in this example looks a bit too slanted. You'd better take
-% |\textsterling| from the |textcomp| package, which I didn't!
+% |\textsterling| from the |textcomp| package, which I didn't.
 %
 %
 %
@@ -517,8 +522,7 @@
 % For some currency units
 % the |\sym| command produces only the \textsc{ISO} code instead of the national style,
 % which I didn't know. This will (with your help!) be changed in future releases.
-% The following table shows the only combinations that make sense to me, but
-% you are free to let your phantasy find new ones. All said about the |in| format
+% The following table shows the most obvious arrangements. All said about the |in| format
 % string is also true for the |out| format.
 % 
 % {\EUROFORMAT{main}{\in}\newcommand\EUROaux{\hspace{1.2cm}}
@@ -545,21 +549,24 @@
 % typeset considering positive\slash negative numbers, rounding and so on.
 %
 % \begin{syntax}
-% |\EUROSYM{all}{|\<number format>|}|\\
-% |\EUROSYM{|\<ISO currency code>|}{|\<number format>|}|
+% |\EUROFORMAT{all}{|\<number format>|}|\\
+% |\EUROFORMAT{|\<ISO currency code>|}{|\<number format>|}|
 % \end{syntax}
 %
-% The definitions labeled with |all| will be used for all currency units
-% except those, which were defined explicitly using their three-digits
-% \textsc{ISO} codes as identifier.
-% Only the \emph{Italian Lira} is defined this way by default, because it wouldn't make sense
-% to write \emph{Lira} amounts with two fractional digits like the other European currencies.^^A
-% \footnote{The package, for example,  says something like
+% The definitions labeled with |all| will be used for all currency units.
+% By using |\EUROFORMAT| with one of the three-digits \textsc{ISO} codes
+% as the first argument, these general settings can be overridden for this
+% currency.
+% Only the \emph{Italian Lira} is defined this way by default, because it
+% wouldn't make sense to write \emph{Lira} amounts with two fractional digits
+% like the other European currencies.^^A
+% \footnote{The package, for example, says something like
 % \texttt{\string\EUROFORMAT\char`\{ITL\char`\}\char`\{\string\round\char`\{0\char`\}\char`\}}.} ^^A   8-P
-% The \textit{number format string} may contain the commands |\form|, |\round|, |\zero|, |\plus|,
-% and |\minus|, each of which takes one or more arguments.
-% You have only to mention the points that shall differ from the
-% default behaviour.
+% 
+% The \textit{number format string} may contain the commands |\form|,
+% |\round|, |\zero|, |\plus|, and |\minus|, each of which takes one or
+% more arguments. You have only to mention the points that shall differ
+% from the default behavior.
 % Such a number format might look horrible like this 
 %
 % \begin{example}
@@ -571,11 +578,11 @@
 % |  \minus{\(-\)}{}}|
 % \end{example}
 %
-% (which, by fortune, is the predefined default format\footnote{Well, that is a lie: In fact,
-% it is only the equivalent of the default definition, which is defined in another way.}),
+% which, by fortune, is the predefined default format\footnote{Well, that is a lie: In fact,
+% it is only the equivalent of the default definition, which is defined in another way.},
 % but it might as well be empty or contain only one of the commands and its arguments.
 % Here again all arguments are predefined quite reasonably, so you won't have
-% to struggle around with these cryptographic things.
+% to bother with these verbose definitions.
 %
 % To make further explanations easier, figure~\ref{fig:nomencl} describes the elements
 % that a number may consist of (using my own nomenclature).
@@ -735,8 +742,8 @@
 %   \end{center}}
 % 
 % \bigskip\noindent
-% The |\EURO@align| command gets replaced by |\rlap| when alignment is requested.
-% You only have to state it in the first argument, if you want to align |0.0|
+% The |\EURO@align| command will get replaced by |\rlap| if alignment was requested.
+% You only have to state it in the first argument, if you want to align zero
 % amounts in tables.
 %
 %
@@ -745,7 +752,7 @@
 % \subsubsection{The \texttt{\char`\\plus} and \texttt{\char`\\minus} commands}
 %
 % The \DescribeMacro{\plus}|\plus| and |\minus| commands allow to
-% define a preamble\slash postamble for positive, and negative numbers, respectively.
+% define a preamble\slash postamble for positive and negative numbers, respectively.
 % \DescribeMacro{\minus}^^A
 %
 % \begin{syntax}
@@ -754,8 +761,7 @@
 % \end{syntax}
 %
 % While |\plus| isn't used by default, |\minus| is defined to provide a preceding
-% minus sign for negative numbers. (The negative numbers of the last two lines
-% are \emph{really} red, believe me!)
+% minus sign for negative numbers.
 %
 %   {\EUROFORMAT{main}{\align\in\hspace*{10mm}}
 %   \EUROFORMAT{in}{\val}
@@ -788,12 +794,12 @@
 % \emph{main}, an \emph{in}, \emph{out}, or one of the \emph{number} formats.
 % This command is to be stated before the
 % concerned |\in|, |\out|, or |\val| command, respectiveley.
-% That |\align| command lets a number's fractional part have
+% It lets a number's fractional part have
 % no width, thus allowing to align such numbers properly in a flush-right
 % table column (|r| column). The example below also shows how to use
 % the \DescribeMacro{\table}|\table| keyword. It turns the \opt{table}
-% mode on for the current table. You can also turn this mode on globally,
-% if you state the \opt{table} package option. If you find the `---' dashes
+% mode on for the current table. To turn it on for the whole document,
+% use the \opt{table} package option. If you find the `---' dashes
 % too long, you can load the package with the \DescribeOption{endash}\opt{endash}
 % option. 
 % 
@@ -845,7 +851,7 @@
 % \end{tabular}
 %
 % \medskip\noindent
-% It would have been much simpler though, not to combine two
+% It would have been much simpler, though, not to combine two
 % columns in one |\EURO| command, but to use two separate entries. 
 % \medskip 
 %
@@ -855,7 +861,7 @@
 % \subsection{Dirty tricks}
 %
 %
-% Of course, the format hasn't to deal with the \euro, nor with monetary amounts
+% Of course, the format doesn't have to deal with the \euro, nor with monetary amounts
 % at all. (The |EUR| currency in the following examples has no meaning,
 % we could also have used any other currency, provided that no |\out| command
 % is used within the \emph{format string.})
@@ -864,7 +870,7 @@
 % |\newcommand*\USD[1]{{%|\\
 % |  \EUROFORMAT{main}{\in}%|\\
 % |  \EUROFORMAT{in}{\val\,\$}%|\\
-% |  \EUROFORMAT{EUR}{\form,.,\round{-2}}%|\\
+% |  \EUROFORMAT{EUR}{\form{,}{.}{,}\round{-2}}%|\hspace*{-1cm}\\
 % |  \EURO{EUR}{#1}}}|\\[1.5ex]
 % |\USD{-123450.6789}|& \USD{-123450.6789}\\[1ex]
 % \end{example}
@@ -877,7 +883,7 @@
 % |\newcommand*\NUM[1]{{%|\\
 % |  \EUROFORMAT{main}{\in}%|\\
 % |  \EUROFORMAT{in}{\val}%|\\
-% |  \EUROFORMAT{EUR}{\form,.,\round{-10}}%|\\
+% |  \EUROFORMAT{EUR}{\form{,}{.}{,}\round{-10}}%|\hspace*{-1cm}\\
 % |  \EURO{EUR}{#1}}}|\\[1.5ex]
 % |\NUM{1000} red ants|& \NUM{1000} red ants
 % \end{example}
@@ -887,7 +893,7 @@
 %
 % \subsection{The default settings}
 %
-% The following lines show, how the |\EURO| command's default behaviour 
+% The following lines show how the |\EURO| command's default behavior 
 % could have been defined. The real settings, however, were defined on
 % a lower programming level.
 %
@@ -918,7 +924,7 @@
 % any settings or commands, select package options and even
 % introduce new package options. But if you intend to give
 % your documents to others, don't forget to give them the
-% used configuration files, too! That's how such a file
+% required configuration files, too! That's how such a file
 %  could look like:
 %
 % \begin{example}[.92\textwidth]
@@ -929,7 +935,7 @@
 % 
 % \indent
 % \begin{example}[.85\textwidth]
-% |% let the Italian Lire be rounded to 10s|\\
+% |% let Italian Lire be rounded to 10s|\\
 % |\EUROFORMAT{ITL}{\round{1}}|\\
 % |% and let their symbol be only `L.'|\\
 % |\EUROSYM{ITL}{L.}|
@@ -938,7 +944,7 @@
 % \indent
 % \begin{example}[.92\textwidth]
 % |% declare a new package option `bold',|\\
-% |% which typesets the source currency in boldface type      8-P|\\
+% |% which typesets the source currency in boldface type|\\
 % |\DeclareOption{bold}{%|\\
 % |  \EUROFORMAT{main}{\textbf{\in} (\out)}}|
 % \end{example}
