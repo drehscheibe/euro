@@ -1,3 +1,5 @@
+$Id$
+
 euro.sty
 ========
 
@@ -17,7 +19,7 @@ address         = "Melchior FRANZ
                    A-5212 SCHNEEGATTERN
                    AUSTRIA"
 telephone       = "++43 7746 3109"
-URL             = "http://unet.univie.ac.at/~a8603365"
+URL             = "http://www.unet.univie.ac.at/~a8603365/"
 email           = "a8603365@unet.univie.ac.at"
 codetable       = "ISO/ASCII"
 keywords        = "euro"
