@@ -160,7 +160,7 @@
 %    \indent\begin{tabular}{l}}
 %   {\end{tabular}\noindentafter\medbreak}
 %
-% \newcommand*\noindentafter{\@nobreaktrue\everypar{{\setbox\z@\lastbox}}}    
+% \newcommand*\noindentafter{\@nobreaktrue\everypar{{\setbox\z@\lastbox}}}
 %
 % \newenvironment{labeling}[1]
 %  {\list{}{\settowidth{\labelwidth}{\textbf{#1}}
@@ -193,7 +193,7 @@
 % (official symbol \euro
 %      \footnote{The \euro\ symbol in this documentation is
 %      `handmade'---it is really ugly and not to be used in real documents. Take the well designed symbol
-%      defined e.\,g.~in the |eurosym| package by \textsc{Henrik Theiling} eventually using 
+%      defined e.\,g.~in the |eurosym| package by \textsc{Henrik Theiling} eventually using
 %      the |eurofont| package by \textsc{Rowland McDonnell} to select the proper fo(u)nt/shape.}^^A
 % ) as base unit, and formats monetary amounts in almost any desired way.
 % The respective conversion rates are predefined for the national
@@ -215,7 +215,7 @@
 % \addtocontents{toc}{\protect\begin{multicols}{2}}
 %
 %
-% \section{Introduction} 
+% \section{Introduction}
 %
 % Twelve of the fifteen members of the European Union have agreed
 % to replace their national currencies by a common currency, the
@@ -239,7 +239,7 @@
 % \(-999999999999999999{,}999999999999999999\) to
 % \(+999999999999999999{,}999999999999999999\) with high precision.
 %
-% Since there are so many currencies and different possible formats, 
+% Since there are so many currencies and different possible formats,
 % this package provides only a customizable interface. All parameters are
 % predefined in a common way, though, so that no further definitions will be
 % necessary in most cases. The package tries to load an optional file
@@ -257,13 +257,13 @@
 % The \DescribeMacro{\EURO}|\EURO| command does the main work.
 % It takes the \textit{source currency unit,} an optional \textit{destination currency unit,}
 % both as three-digits \textsc{ISO} currency codes (see table \ref{tab:iso}), and
-% the respective \emph{money amount}. 
+% the respective \emph{money amount}.
 %
 % \begin{syntax}
 % |\EURO{|\<source currency unit>|}[|\<destination currency unit>|]{|\<amount>|}|
 % \end{syntax}
 %
-% 
+%
 % \begin{table}
 % \begin{quote}
 % \begin{center}
@@ -302,18 +302,18 @@
 %
 % The ISO currency codes don't really look good in running text. You
 % can replace them by some other currency symbol or tag using the
-% \DescribeMacro{\EUROSYM}|\EUROSYM| command. 
-% 
+% \DescribeMacro{\EUROSYM}|\EUROSYM| command.
+%
 % \begin{syntax}
 % |\EUROSYM{|\<currency unit>|}{|\<symbol>|}|
 % \end{syntax}
 %
-% We Austrians, for example, prefer to write `\"oS' instead of `ATS'. 
+% We Austrians, for example, prefer to write `\"oS' instead of `ATS'.
 % We don't have to write |\EUROSYM{ATS}{\"oS}| though, because this national
 % style (like those of some other countries) is already predefined. If your
 % national style is still missing, please drop me a line, and I will insert it.
 % Meanwhile the \textsc{ISO} currency codes are used in such cases.
-% 
+%
 % \begin{example}
 % |\EURO{FRF}{16.3}|&      \EURO{FRF}{16.3}\\
 % |\EUROSYM{FRF}{Francs}|&\\
@@ -322,13 +322,13 @@
 %
 % The official Euro symbol is not provided by default, since there are a lot of
 % different fonts and methods to produce an \euro\ sign. Type
-% |\EUROSYM{EUR}{|\(\langle\)\textit{euro symbol}\(\rangle\)|}| to 
+% |\EUROSYM{EUR}{|\(\langle\)\textit{euro symbol}\(\rangle\)|}| to
 % replace the word `Euro' with your local \euro\ sign.
 % (I'm still hoping that some day the text companion fonts will contain the official in
-% addition or instead of the phantasy \emph{Euro} symbols.) 
+% addition or instead of the phantasy \emph{Euro} symbols.)
 % This documentation, for example, says |\EUROSYM{EUR}{\euro}|
 % because it has its own |\euro| symbol built-in. (Isn't it beautiful?)
-% 
+%
 % \begin{example}
 % |\EURO{LUF}{137.8}|&      \EURO{LUF}{137.8}\\
 % |\EUROSYM{EUR}{\euro}|&\\
@@ -349,7 +349,7 @@
 % \end{example}
 % \null
 %
-% 
+%
 %
 %
 % \subsection{The package options}
@@ -380,7 +380,7 @@
 %   Lets zeros be printed instead of dashes. Doesn't turn on \emph{table mode}.
 % \end{labeling}
 %
-% 
+%
 % \begin{table}
 % \begin{center}
 %^^A the options are only faked here   ;-)
@@ -420,7 +420,7 @@
 % \caption{Package options}
 % \label{tab:options}
 % \end{table}
-% 
+%
 %
 %
 %
@@ -430,13 +430,13 @@
 % add their currency units to your document files or, better, to
 % your local `|euro.cfg|' configuration file.
 % The |euro| package will then, of course, be updated as soon as possible.
-% 
+%
 % \begin{syntax}
 % |\EUROADD{|\<ISO code>|}{|\<national style/symbol>|}{|\<conversion rate>|}|
 % \end{syntax}
 %
 % The conversion rate describes, how many units of the new currency
-% equal 1~\euro. You can also add currencies, that will 
+% equal 1~\euro. You can also add currencies, that will
 % probably never become member of the \emph{Euro-zone,} like the US-\$. But be aware that such
 % conversion rates may change daily/hourly! See \(\langle\)|http://europa.eu.int/|\(\rangle\) for the
 % actual rates. The used \textsc{ISO} code serves as identifier for the
@@ -461,10 +461,10 @@
 %
 %
 %
-% 
+%
 % \section{Further customization}
-% \label{sec:format} 
-% 
+% \label{sec:format}
+%
 % The desirable format for monetary amounts may differ from country to country and from purpose to purpose.
 % The |euro| package uses three kinds of format strings to customize the format, each of which may
 % consist of some \emph{reserved keywords} and any other \TeX\ commands. It's a good idea
@@ -479,7 +479,7 @@
 % \begin{syntax}
 % |\EUROFORMAT{main}{|\<main format string>|}|
 % \end{syntax}
-% 
+%
 % The \emph{reserved keywords} |\in| and |\out| stand for the source and the destination currency.
 % The following table shows some possible formats with the first line showing the
 % default definition.
@@ -500,7 +500,7 @@
 %
 % \subsection{The currency format}
 %
-% 
+%
 % The currency format defines how the source and the destination currency
 % shall be formatted.
 %
@@ -525,11 +525,11 @@
 % which I didn't know. This will (with your help!) be changed in future releases.
 % The following table shows the most obvious arrangements. All said about the |in| format
 % string is also true for the |out| format.
-% 
+%
 % {\EUROFORMAT{main}{\in}\newcommand\EUROaux{\hspace{1.2cm}}
 % \begin{example}[.58\textwidth]
 % with |\EUROFORMAT{main}{\in}|  & |\EURO{ATS}{30}| yields\\
-% \hspace{2cm}and&\\[.5ex] 
+% \hspace{2cm}and&\\[.5ex]
 % \hline\\[-1.5ex]
 % |\EUROFORMAT{in}{\val~\sym}|&  \EUROaux\EURO{ATS}{30}\\
 % |\EUROFORMAT{in}{\val~\iso}|&  \EUROaux\EUROFORMAT{in}{\val~\iso}\EURO{ATS}{30}\\
@@ -563,12 +563,12 @@
 % like the other European currencies.^^A
 % \footnote{The package, for example, says something like
 % \texttt{\string\EUROFORMAT\char`\{ITL\char`\}\char`\{\string\round\char`\{0\char`\}\char`\}}.} ^^A   8-P
-% 
+%
 % The \textit{number format string} may contain the commands |\form|,
 % |\round|, |\zero|, |\plus|, and |\minus|, each of which takes one or
 % more arguments. You have only to mention the points that shall differ
 % from the default behavior.
-% Such a number format might look horrible like this 
+% Such a number format might look horrible like this
 %
 % \begin{example}
 % |\EUROFORMAT{all}{%|\\
@@ -587,7 +587,7 @@
 %
 % To make further explanations easier, figure~\ref{fig:nomencl} describes the elements
 % that a number may consist of (using my own nomenclature).
-% 
+%
 % \begin{center}
 % \begin{figure}
 % {\setlength{\unitlength}{1mm}
@@ -622,15 +622,15 @@
 % \end{figure}
 % \end{center}
 %
-% 
-% 
+%
+%
 %
 %
 % \subsubsection{The \texttt{\char`\\form} command}
 %
 % The \DescribeMacro{\form}|\form| command takes three arguments: the \emph{integer group separator},
 % the \emph{decimal point} and the \emph{fractional group separator}.
-% 
+%
 % \begin{syntax}
 % |\form|\\
 % |  {|\<integer group separator>|}|\\
@@ -646,7 +646,7 @@
 %   desirable in some cases.
 % \item[decimal point:]
 %   separates a number's integer part from the fractional part. It's a comma by default.
-% 
+%
 %   {\EUROFORMAT{main}{\in}
 %   \EUROFORMAT{in}{\align\val\hspace*{1cm}}
 %   \newcommand*\test[3]{\EUROFORMAT{EUR}{\form{#1}{#2}{#3}}\EURO{EUR}{1000.12345}}
@@ -669,7 +669,7 @@
 % \subsubsection{The \texttt{\char`\\round} command}
 %
 % The \DescribeMacro{\round}|\round| command takes the \emph{rounding number} as argument.
-% 
+%
 % \begin{syntax}
 % |\round{|\<rounding number>|}|
 % \end{syntax}
@@ -685,20 +685,20 @@
 %   \begin{tabular}{r@{\hspace{1cm}}r@{\hspace{1.8cm}}}%
 %   \textit{rounding}& \textit{result}\\[.5ex]
 %   \hline\\[-1.5ex]
-%    |-10|&      \test{-10}\\ 
-%    |-4|&      \test{-4}\\ 
-%    |-3|&      \test{-3}\\ 
-%    |-2|&      \test{-2}\\ 
-%    |-1|&      \test{-1}\\ 
-%    |0|&       \test{0}\\ 
-%    |1|&       \test{1}\\ 
-%    |2|&       \test{2}\\ 
-%    |3|&       \test{3}\\ 
-%    |4|&       \test{4}\\ 
-%    |5|&       \test{5} 
+%    |-10|&      \test{-10}\\
+%    |-4|&      \test{-4}\\
+%    |-3|&      \test{-3}\\
+%    |-2|&      \test{-2}\\
+%    |-1|&      \test{-1}\\
+%    |0|&       \test{0}\\
+%    |1|&       \test{1}\\
+%    |2|&       \test{2}\\
+%    |3|&       \test{3}\\
+%    |4|&       \test{4}\\
+%    |5|&       \test{5}
 %   \end{tabular}
 %   \end{center}}
-%   
+%
 %
 %
 %
@@ -714,7 +714,7 @@
 %
 % \noindent
 % The following table shows some of the possible settings. The first entry is
-% the predefined one, which should be used for running text. 
+% the predefined one, which should be used for running text.
 % The last line shows the number format that is obtained in table mode with
 % the default style \DescribeOption{emdash}\opt{emdash} selected.
 %
@@ -741,7 +741,7 @@
 %     \test{0}{---}{,---}{3.0}\\
 %   \end{tabular}
 %   \end{center}}
-% 
+%
 % \bigskip\noindent
 % The |\EURO@align| command will get replaced by |\rlap| if alignment was requested.
 % You only have to state it in the first argument, if you want to align zero
@@ -782,7 +782,7 @@
 %     \test{\color{red}\(-\)}{}{-10}^^A
 %   \end{tabular}
 %   \end{center}}
-% 
+%
 %
 %
 %
@@ -802,8 +802,8 @@
 % mode on for the current table. To turn it on for the whole document,
 % use the \opt{table} package option. If you find the `---' dashes
 % too long, you can load the package with the \DescribeOption{endash}\opt{endash}
-% option. 
-% 
+% option.
+%
 %
 % \medskip
 % \newcommand*\ALNUM{\EUROFORMAT{main}{\table\in}\EUROFORMAT{in}{\align\val}\EURO{EUR}}
@@ -820,7 +820,7 @@
 % |\ALNUM{0.123456}|&     \ALNUM{0.123456}\\
 % |\end{tabular}|
 % \end{tabular}
-% 
+%
 % \medskip\noindent
 % It may be necessary to put a |\hspace| after such an aligned number,
 % especially when it is applied more than once. The second column would
@@ -837,7 +837,7 @@
 % |  \EUROFORMAT{main}{\align\in\hspace{1.8cm}\llap{\align\out}}%|\hspace*{-1cm}\\
 % |  \EUROFORMAT{in}{\val}%|\\
 % |  \EUROFORMAT{out}{\val}%|\\
-% |  \EURO{IEP}}|       
+% |  \EURO{IEP}}|
 % \end{example}
 % \null
 %
@@ -853,8 +853,8 @@
 %
 % \medskip\noindent
 % It would have been much simpler, though, not to combine two
-% columns in one |\EURO| command, but to use two separate entries. 
-% \medskip 
+% columns in one |\EURO| command, but to use two separate entries.
+% \medskip
 %
 %
 %
@@ -879,7 +879,7 @@
 % These examples are probably too complicated for the simple things they do.
 % But they may serve as examples of how to use some of the customization
 % commands.
-% 
+%
 % \begin{example}[.6\textwidth]
 % |\newcommand*\NUM[1]{{%|\\
 % |  \EUROFORMAT{main}{\in}%|\\
@@ -894,7 +894,7 @@
 %
 % \subsection{The default settings}
 %
-% The following lines show how the |\EURO| command's default behavior 
+% The following lines show how the |\EURO| command's default behavior
 % could have been defined. The real settings, however, were defined on
 % a lower programming level.
 %
@@ -918,7 +918,7 @@
 % \subsection{The configuration file}
 % \label{sec:config}
 %
-% If you want to change the predefined settings, create a 
+% If you want to change the predefined settings, create a
 % file named `|euro.cfg|' and put it in a directory, where \TeX\
 % can find it. This configuration file will then be loaded
 % at the end of the |euro.sty| file, so you may redefine
@@ -933,7 +933,7 @@
 % |\EUROADD{USD}{\$}{1.0891}|\\
 % |\EUROADD{GBP}{\textsterling}{0.6694}|
 % \end{example}
-% 
+%
 % \indent
 % \begin{example}[.85\textwidth]
 % |% let Italian Lire be rounded to 10s|\\
@@ -941,7 +941,7 @@
 % |% and let their symbol be only `L.'|\\
 % |\EUROSYM{ITL}{L.}|
 % \end{example}
-% 
+%
 % \indent
 % \begin{example}[.92\textwidth]
 % |% declare a new package option `bold',|\\
@@ -949,7 +949,7 @@
 % |\DeclareOption{bold}{%|\\
 % |  \EUROFORMAT{main}{\textbf{\in} (\out)}}|
 % \end{example}
-% 
+%
 % \indent
 % \begin{example}[.85\textwidth]
 % |% always select the `endash' option|\\
@@ -974,7 +974,7 @@
 %   amending Regulation (EC) No.~2866/98 on the conversion rates between the euro and the currencies
 %   of the Member States adopting the euro.} Official Journal L~167. 7~July~2000.}
 %
-% \bibitem{EUround}{European Council: \textit{Certain provisions related to the introduction of the 
+% \bibitem{EUround}{European Council: \textit{Certain provisions related to the introduction of the
 %   Euro.} Council Regulation 1103/97, 17~June~1997.}
 %
 % \bibitem{DEK}{\textsc{Knuth, Donald Ervin:} \textit{The \TeX book.}
@@ -987,10 +987,18 @@
 %
 %
 %
-%
-%
-%
 % \StopEventually{\addtocontents{toc}{\protect\end{multicols}}}
+%
+%
+%
+%
+%
+%
+%
+%
+%^^A max 72 columns
+%^^A--------------------------------------------------------------------
+%
 %
 %
 %
@@ -1003,6 +1011,13 @@
 \RequirePackage{fp-snap}
 \FPmessagesfalse
 %    \end{macrocode}
+%
+%
+%
+%
+%^^A--------------------------------------------------------------------
+%
+%
 %
 %
 % \subsection{The engine}
@@ -1023,7 +1038,7 @@
 % format strings. Never change them here, but create a `|euro.cfg|'
 % file, where you can redefine them without causing undesirable
 % side effects.
-% 
+%
 %    \begin{macrocode}
 \newcommand*\EURO@zero{0}
 \newcommand*\EURO@lzero{0}
@@ -1050,6 +1065,11 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
+%
+%
+%
+%
+%^^A--------------------------------------------------------------------
 %
 %
 %
@@ -1101,13 +1121,17 @@
 %
 %
 %
+%^^A--------------------------------------------------------------------
+%
+%
+%
 %
 % \begin{macro}{\EUROSYM}
 % \begin{macro}{\EUROFORMAT}
 % \begin{macro}{\EUROADD}
 % These macros replace the third\slash fourth parameter of the
 % respective currency entry with another currency code\slash
-% format string, or add a new currency entry. 
+% format string, or add a new currency entry.
 %
 %    \begin{macrocode}
 \newcommand*\EUROSYM[2]{%
@@ -1124,6 +1148,11 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
+%
+%
+%
+%
+%^^A--------------------------------------------------------------------
 %
 %
 %
@@ -1154,7 +1183,7 @@
            \FPclip\EURO@aux\EURO@aux
          \else
            \FPtrunc\EURO@aux\EURO@aux{-\EURO@round}%
-         \fi  
+         \fi
          \EURO@point
          \expandafter\EURO@split\EURO@aux\relax\relax\relax\EURO@
        \fi
@@ -1177,6 +1206,9 @@
 %
 %
 %
+%^^A--------------------------------------------------------------------
+%
+%
 %
 %
 % \begin{macro}{\EURO@rround}
@@ -1196,7 +1228,7 @@
     \EURO@rfac\EURO@aux\count@
     \FPdiv#1#1\EURO@aux
     \FPround#1#10%
-    \FPmul#1#1\EURO@aux 
+    \FPmul#1#1\EURO@aux
   \fi}
 \newcommand*\EURO@rfac[2]{%
   \ifnum#2>0 \advance#2-1 \EURO@rfac#1#2\FPmul#1#1{10}\fi}
@@ -1205,6 +1237,9 @@
 % \end{macro}
 %
 %
+%
+%
+%^^A--------------------------------------------------------------------
 %
 %
 %
@@ -1231,6 +1266,12 @@
   \fi\egroup}
 %    \end{macrocode}
 % \end{macro}
+%
+%
+%
+%
+%^^A--------------------------------------------------------------------
+%
 %
 %
 %
@@ -1286,6 +1327,10 @@
 %
 %
 %
+%^^A--------------------------------------------------------------------
+%
+%
+%
 %
 % \begin{macro}{\EURO@@main}
 % \begin{macro}{\EURO@@in}
@@ -1295,7 +1340,7 @@
 % some default settings. Define the number format for
 % the \emph{Italian Lira} and the package options,
 % load the optional `|euro.cfg|' file and, finally:
-% Exit. 
+% Exit.
 %
 %
 %    \begin{macrocode}
@@ -1332,6 +1377,11 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
+%
+%
+%
+%
+%^^A--------------------------------------------------------------------
 %
 %
 %
