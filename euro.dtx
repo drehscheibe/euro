@@ -1,7 +1,7 @@
 % \iffalse
-%% File: euro.dtx       Copyright (C) 1999,2001     Melchior FRANZ
+%% File: euro.dtx      Copyright (C) 1999--2005    Melchior FRANZ
 %% $Id$
-%% $Version: 1.0 $
+%% $Version: 1.1 $
 %
 %<*preamble>
 %
@@ -26,8 +26,8 @@
 %% ====================================================================
 %%  @LaTeX-package-file{
 %%     author          = "Melchior FRANZ",
-%%     version         = "1.0",
-%%     date            = "12 October 2001",
+%%     version         = "1.1",
+%%     date            = "19 February 2003",
 %%     filename        = "euro.dtx",
 %%     address         = "Melchior FRANZ
 %%                        Rieder Hauptstrasse 52
@@ -71,8 +71,8 @@
 %
 %
 %<*driver>
-\def\fileversion{1.0}
-\def\filedate{2001/10/12}
+\def\fileversion{1.1}
+\def\filedate{2003/02/19}
 \documentclass[draft]{ltxdoc}
 %
 \IfFileExists{euro.sty}
@@ -172,13 +172,14 @@
 % \changes{v0.1}{1999/02/01}{initial version}%
 % \changes{v0.2}{1999/05/15}{interface completely new; integer rounding implemented}%
 % \changes{v1.0}{2001/10/12}{greek currency added}%
+% \changes{v1.1}{2003/02/19}{specific currency formats inherit generic settings}%
 %
 %
 %
 %
 % \title{The \texttt{euro} package}
 % \author{Melchior \textsc{FRANZ}}
-% \date{October 12, 2001}
+% \date{February 19, 2003}
 % \maketitle
 %
 %
@@ -997,7 +998,7 @@
 %    \begin{macrocode}
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{euro}[2001/10/12 v1.0 euro  (mf)]
+\ProvidesPackage{euro}[2003/02/19 v1.1 euro  (mf)]
 \RequirePackage{fp-basic}
 \RequirePackage{fp-snap}
 \FPmessagesfalse
@@ -1252,7 +1253,6 @@
 % by the European Commission and been published in the \emph{Council Regulation (EC) No.~2866/98}
 % \cite{EUrates} and \emph{No.~1478/2000} \cite{EUratesGRD}
 % (taken from |http://europa.eu.int/|).
-% \changes{v1.0}{2001/10/12}{greek currency added}%
 %
 %    \begin{macrocode}
 \newcommand*\EURO@@ATS{\EURO@set{13.7603}{ATS}{\"oS}{}}
