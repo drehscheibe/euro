@@ -1,7 +1,8 @@
 # $Id$
+
 NAME=euro
-ARCHNAME=$(NAME).tar.gz
-ARCHIVE=$(NAME).dtx Makefile $(NAME).txt $(NAME).ins
+ARCHIVE_NAME=$(NAME).tar.gz
+ARCHIVE_CONTENTS=$(NAME).dtx Makefile $(NAME).txt $(NAME).ins
 MAKEIDXOPT=
 DVIPSOPT= #-Pcmz -Pamz
 DEP=$(NAME).sty
@@ -14,19 +15,29 @@ print: $(NAME).ps
 	@ read key
 	psbook $(NAME).ps|psnup -2|psselect -o -r|lpr
 
+ps: $(NAME).ps
+
 %.ps: %.dvi
 	dvips $(DVIPSOPT) $< -o $@
 
-archive:
-	@ tar -czf $(ARCHNAME) $(ARCHIVE)
-	@ echo ""
-	@ echo $(ARCHNAME)
+pdf: $(NAME).pdf
 
-clean:
+%.pdf: %.dtx
+	pdflatex $<
+
+arc: archive
+
+archive: $(NAME).ins
+	@ tar -czf $(ARCHIVE_NAME) $(ARCHIVE_CONTENTS)
+	@ echo $(ARCHIVE_NAME):
+	@ echo ====================
+	@ tar -tzf $(ARCHIVE_NAME)
+
+clean: 
 	rm -f $(NAME).{log,toc,lot,lof,idx,ilg,ind,aux,blg,bbl,dvi,ins}
 
 distclean: clean
-	rm -f $(NAME).{ps,sty} $(ARCHNAME)
+	rm -f $(NAME).{ps,pdf,sty} $(ARCHIVE_NAME)
 
 
 REFWARN = 'Rerun to get cross-references'
