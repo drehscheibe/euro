@@ -11,8 +11,8 @@ Conversion rates for the so-called Euro-zone countries
 are already built-in. Further rates can be added easily.
 
 author          = "Melchior FRANZ"
-version         = "1.0"
-date            = "12 October 2001"
+version         = "1.1"
+date            = "19 February 2003"
 filename        = "euro.dtx"
 address         = "Melchior FRANZ
                    Rieder Hauptstrasse 52
@@ -36,19 +36,20 @@ in the file macros/latex/base/lppl.txt on any CTAN archive server.
 
 
 Extracting the package & processing the documentation
-=====================================================  
+=====================================================
 
- (1)  run `euro.dtx' through LaTeX to get `euro.ins',
-      (if you don't already have it)
+on Unix/Linux just run "make" to get the style file and the documentation;
+else generate the driver euro.ins (if you don't already have it):
 
- (2)  run `euro.ins' through (La)TeX to get
-      the package `euro.sty'
+    $ latex euro.dtx
 
-      [or use `docstrip', and extract `euro.sty' from `euro.dtx'
-       using option `package']
+Now generate the style file:
 
- (3)  now run `euro.dtx' three times through LaTeX
-      to get the documentation file `euro.dvi'
+    $ tex euro.ins
+
+And finally to produce the documentation run LaTeX three times:
+
+    $ latex euro.dtx
 
 
 
