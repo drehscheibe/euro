@@ -20,6 +20,9 @@ ps: $(NAME).ps
 %.ps: %.dvi
 	dvips $(DVIPSOPT) $< -o $@
 
+hyper: $(NAME).dtx $(NAME).sty
+	pdflatex "\relax\let\makehyperref\active\input $(NAME).dtx"
+
 pdf: $(NAME).pdf
 
 %.pdf: %.dtx

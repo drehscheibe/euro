@@ -77,7 +77,27 @@
 %<*driver>
 \def\fileversion{1.1}
 \def\filedate{2003/02/19}
-\documentclass[draft]{ltxdoc}
+\documentclass{ltxdoc}
+%
+%
+%
+\ifx\makehyperref\EUROundefined
+    \newcommand*\texorpdfstring[2]{#1}
+    \newcommand*\color[1]{}
+\else   ^^A for "make hyper"
+    \usepackage{hyperref}
+    \hypersetup{
+        bookmarksopen,
+        colorlinks,
+        pdftitle={The euro package},
+        pdfauthor={Melchior FRANZ},
+        pdfsubject={${}$Id${}$},
+        pdfkeywords={currency, euro, monetary, conversion}
+    }
+    \usepackage[pdftex]{graphicx,color}
+\fi
+%
+%
 %
 \IfFileExists{euro.sty}
   {\usepackage{euro}[1999/05/15]\let\EUROSTYfound\active}
@@ -93,8 +113,6 @@
   \newcommand*\EUROSYM[2]{}}
 %
 \usepackage{multicol}
-%\usepackage{color}
-\newcommand*\color[1]{}
 \setcounter{tocdepth}{2}
 \begin{document}
 \DocInput{euro.dtx}
