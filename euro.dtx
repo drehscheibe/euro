@@ -2,27 +2,31 @@
 %% File: euro.dtx      Copyright (C) 1999--2005    Melchior FRANZ
 %% $Id$
 %% $Version: 1.1 $
-%
 %<*preamble>
 %
-%     (1)  run `euro.dtx' through LaTeX to get `euro.ins',
-%          (if you don't already have it)
 %
-%     (2)  run `euro.ins' through (La)TeX to get
-%          the package `euro.sty'
 %
-%          [or use `docstrip', and extract `euro.sty' from `euro.dtx'
-%           using option `package']
+% on Unix/Linux just run "make" to get the style file and the documentation;
+% else generate the driver euro.ins (if you don't already have it):
 %
-%     (3)  now run `euro.dtx' three times through LaTeX
-%          to get the documentation file `euro.dvi'
+%     $ latex euro.dtx
+%
+% Now generate the style file:
+%
+%     $ tex euro.ins
+%
+% And finally to produce the documentation run LaTeX three times:
+%
+%     $ latex euro.dtx
+%
+%
 %
 %
 % This package needs the fp-package!
 %
 % fp      -- CTAN//macros/latex/contrib/other/fp/  --  (by Michael MEHLICH)
 %
-%
+%$
 %% ====================================================================
 %%  @LaTeX-package-file{
 %%     author          = "Melchior FRANZ",
